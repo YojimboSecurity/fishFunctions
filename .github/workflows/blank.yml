@@ -27,10 +27,32 @@ jobs:
 
       # Install fish shell
       - name: Install fish
-        run: sudo apt-get update && sudo apt-get install -y fish
+        run: sudo apt-get update && sudo apt-get install -y fish && sudo chsh -s $(which fish) $GITHUB_USER
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      # Copy fish functions
+      - name: Copy fish functions
+        run: cp -Rf $GITHUB_WORKSPACE/functions/* $HOME/.config/fish/functions/ && echo "functions copied"
+
+      # Install dependencies (bat)
+      - name: Install dependencies (bat)
+        run: curl -s https://sh.rustup.rs | bat
+
+      # Install dependencies (lsd)
+      - name: Install dependencies (lsd)
+        run: curl -OL https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_arm64.deb && sudo dpkg -i lsd_0.20.1_amd64.deb
+
+      # Install dependencies (lolcat)
+      - name: Install dependencies (lolcat)
+        run: snap install lolcat-c
+
+      # Test
+      - name: Test
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          cat $HOME/.config/fish/functions/lolcat.fish,
+          commits,
+          duck,
+          ls,
+          total_file_sizes,
+          mkdir-cd $HOME/test,
+          pwd,
+          cd .. && rm -rf $HOME/test,
