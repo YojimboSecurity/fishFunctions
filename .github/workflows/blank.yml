@@ -43,7 +43,7 @@ jobs:
 
       # Install dependencies (lolcat)
       - name: Install dependencies (lolcat)
-        run: snap install lolcat-c
+        run: sudo snap install lolcat-c
 
       # Test
       - name: Test
