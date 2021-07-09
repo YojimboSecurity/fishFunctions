@@ -1,3 +1,4 @@
 function ls
-    /usr/local/bin/lsd $argv
+    set l (which lsd)
+    $l $argv
 end
