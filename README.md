@@ -32,6 +32,8 @@ There are some dependencies that you need to install to take advantage of this p
 
 - [bat](https://github.com/sharkdp/bat)
 
+- [spark](https://github.com/jorgebucaran/spark.fish)
+
 ## Related Repositories
 
 - [fish-functions](https://github.com/razzius/fish-functions)

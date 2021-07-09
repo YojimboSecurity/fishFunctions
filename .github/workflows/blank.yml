@@ -45,6 +45,10 @@ jobs:
       - name: Install dependencies (lolcat)
         run: sudo snap install lolcat-c
 
+      # Install dependencies (spark)
+      - name: Install dependencies (spark)
+        run: curl -L https://raw.githubusercontent.com/jorgebucaran/spark.fish/main/functions/spark.fish -o $HOME/.config/fish/functions/spark.fish && echo "spark.fish copied" && ls -al $HOME/.config/fish/functions/spark.fish
+
       # Test commits
       - name: Test commits
         run: fish -c commits
