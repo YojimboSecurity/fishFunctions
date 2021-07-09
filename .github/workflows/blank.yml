@@ -31,7 +31,7 @@ jobs:
 
       # Copy fish functions
       - name: Copy fish functions
-        run: mkdir -p $HOME/.config/fish/functions/ && cp -Rf $GITHUB_WORKSPACE/functions/* $HOME/.config/fish/functions/ && echo "functions copied"
+        run: mkdir -p $HOME/.config/fish/functions/ && cp -Rf $GITHUB_WORKSPACE/functions/* $HOME/.config/fish/functions/ && echo "functions copied" && ls -al $HOME/.config/fish/functions/
 
       # Install dependencies (bat)
       - name: Install dependencies (bat)
@@ -45,14 +45,26 @@ jobs:
       - name: Install dependencies (lolcat)
         run: sudo snap install lolcat-c
 
-      # Test
-      - name: Test
-        run: |
-          cat $HOME/.config/fish/functions/lolcat.fish,
-          commits,
-          duck,
-          ls,
-          total_file_sizes,
-          mkdir-cd $HOME/test,
-          pwd,
-          cd .. && rm -rf $HOME/test,
+      # Test cat
+      - name: cat 
+        run: cat $HOME/.config/fish/functions/cat.fish
+
+      # Test commits
+      - name: Test commits
+        run: commits
+
+      # Test duck
+      - name: Test duck
+        run: duck
+
+      # Test ls
+      - name: Test ls
+        run: ls
+
+      # Test mkdir-cd
+      - name: Test mkdir-cd
+        run: mkdir-cd test && pwd && cd .. && rm -rf test
+
+      # Test total_file_size
+      - name: Test total_file_size
+        run: total_file_size
