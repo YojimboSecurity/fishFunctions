@@ -39,7 +39,7 @@ jobs:
 
       # Install dependencies (lsd)
       - name: Install dependencies (lsd)
-        run: curl -OL https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_arm64.deb && sudo dpkg -i lsd_0.20.1_amd64.deb
+        run: curl -OL https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd64.deb && sudo dpkg -i lsd_0.20.1_amd64.deb
 
       # Install dependencies (lolcat)
       - name: Install dependencies (lolcat)
