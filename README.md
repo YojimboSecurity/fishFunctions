@@ -22,6 +22,12 @@ Naturally, you need to install [fish](http://fishshell.com/). I also recommend i
 
 Copy one or all files to your `~/.config/fish/functions/` directory.
 
+    cp functions/* ~/.config/fish/functions/
+
+You may also link one or more files to your `~/.config/fish/functions/` directory.
+
+    ln -s functions/* ~/.config/fish/functions/
+
 ### Dependencies
 
 There are some dependencies that you need to install to take advantage of this package.
