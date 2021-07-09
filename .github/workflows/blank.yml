@@ -31,7 +31,7 @@ jobs:
 
       # Copy fish functions
       - name: Copy fish functions
-        run: cp -Rf $GITHUB_WORKSPACE/functions/* $HOME/.config/fish/functions/ && echo "functions copied"
+        run: mkdir -p $HOME/.config/fish/functions/ && cp -Rf $GITHUB_WORKSPACE/functions/* $HOME/.config/fish/functions/ && echo "functions copied"
 
       # Install dependencies (bat)
       - name: Install dependencies (bat)
