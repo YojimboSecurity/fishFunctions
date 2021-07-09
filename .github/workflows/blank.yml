@@ -35,15 +35,15 @@ jobs:
 
       # Install dependencies (bat)
       - name: Install dependencies (bat)
-        run: sudo apt-get install -y bat
+        run: sudo apt-get install -y bat && echo "bat installed" && which bat
 
       # Install dependencies (lsd)
       - name: Install dependencies (lsd)
-        run: curl -OL https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd64.deb && sudo dpkg -i lsd_0.20.1_amd64.deb
+        run: curl -OL https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd64.deb && sudo dpkg -i lsd_0.20.1_amd64.deb && rm lsd_0.20.1_amd64.deb && echo "lsd installed" && which lsd
 
       # Install dependencies (lolcat)
       - name: Install dependencies (lolcat)
-        run: sudo snap install lolcat-c
+        run: sudo snap install lolcat-c && echo "lolcat installed" && which lolcat
 
       # Install dependencies (spark)
       - name: Install dependencies (spark)
