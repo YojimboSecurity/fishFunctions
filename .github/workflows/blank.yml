@@ -45,26 +45,18 @@ jobs:
       - name: Install dependencies (lolcat)
         run: sudo snap install lolcat-c
 
-      # Test cat
-      - name: cat 
-        run: cat $HOME/.config/fish/functions/cat.fish
-
       # Test commits
       - name: Test commits
-        run: commits
+        run: fish -c commits
 
       # Test duck
       - name: Test duck
-        run: duck
+        run: fish -c duck
 
       # Test ls
       - name: Test ls
-        run: ls
-
-      # Test mkdir-cd
-      - name: Test mkdir-cd
-        run: mkdir-cd test && pwd && cd .. && rm -rf test
+        run: fish -c ls
 
       # Test total_file_size
       - name: Test total_file_size
-        run: total_file_size
+        run: fish -c total_file_size
