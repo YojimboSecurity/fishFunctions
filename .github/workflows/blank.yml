@@ -35,7 +35,7 @@ jobs:
 
       # Install dependencies (bat)
       - name: Install dependencies (bat)
-        run: curl -s https://sh.rustup.rs | bat
+        run: sudo apt-get install -y bat
 
       # Install dependencies (lsd)
       - name: Install dependencies (lsd)
