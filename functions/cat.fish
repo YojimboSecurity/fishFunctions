@@ -1,3 +1,4 @@
 function cat
-    /usr/local/bin/bat $argv
+    set b (which bat)
+    $b $argv
 end
